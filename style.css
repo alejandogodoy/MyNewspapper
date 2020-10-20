@@ -1,3 +1,4 @@
+/*GENERAL STYLES*/
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -37,6 +38,7 @@ img {
     margin:0px;
     padding:0px;
 }
+/* NAVEGATION MENU*/
 .header {
     margin: auto;
     padding: 0;
@@ -101,6 +103,7 @@ border-style: none;
     right:-140px;
     top:0px;
 }
+/*CONTENT STYLE*/
 .column {
     float: left;
     width: 25%;
@@ -138,6 +141,7 @@ border-style: none;
   .box {
       border: 3px solid rgb(39, 70, 60);
   }
+  /*MEDIAQUERY*/
   @media screen and (max-width:748px) {
     .column, .column2, .column3{
       width: 100%;
