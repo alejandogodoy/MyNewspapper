@@ -246,3 +246,28 @@ function checkZC(){
 function resetZC(){
     errCod.innerHTML="";
 }
+
+////// ID Form //////
+
+var idD=document.getElementById("idDocument");
+var errIdD=document.getElementById("error-idDocument");
+
+idD.addEventListener("focus",resetIoc);
+idD.addEventListener("blur",checkIoc);
+
+function checkIoc(){
+    if(idD.value.length<7 || idD.value.length>8){
+        errIdD.innerHTML="The ID must be between 7 and 8 digits";
+    }
+    else{
+        for (var i=0; i<idD.value.length;i++){
+            if(!correctNum(idD.value[i])){
+                errIdD.innerHTML="Please, enter only numbers";
+                break;
+            }
+        }
+    }
+}
+function resetIoc(){
+    errIdD.innerHTML="";
+}
