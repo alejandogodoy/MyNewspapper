@@ -112,3 +112,46 @@ function checkRP(){
 function resetRP(){
     errRepPass.innerHTML="";
 }
+
+////// AGE FORM //////
+
+function correctNum(num){
+    if(num=="0" ||num=="1" ||num =="2" ||
+    num=="3" ||num=="4" ||num=="5" ||
+    num=="6" ||num=="7" ||num=="8" ||num=="9"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+var age=document.getElementById("age");
+var errAge=document.getElementById("error-age");
+
+age.addEventListener("focus",resetAge);
+age.addEventListener("blur",CheckAge);
+
+function CheckAge(){
+    var ageTxt=true;
+    if(age.value.length<=2 && age.value.length>0){
+        for(var i=0;i<age.value.length;i++){
+            if(!correctNum(age.value[i])){
+                ageTxt=false;
+                break;
+            }
+        }
+        if (ageTxt){
+            if(age.value<18 ){
+                errAge.innerHTML="Yo must be older than 18";
+            }
+        }else{
+            errAge.innerHTML="Something go wrong";
+        }
+    }else{
+        errAge.innerHTML="Something go wrong";
+    }
+}
+
+function resetAge(){
+    errAge.innerHTML="";
+}
