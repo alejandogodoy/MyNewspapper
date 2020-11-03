@@ -196,17 +196,17 @@ dir.addEventListener("focus",resetAdress);
 dir.addEventListener("blur",CheckAdress);
 
 function CheckAdress(){
-    var adressTxt=false;
+    var adresTxt= false;
     if(dir.value.length<5){
         errDir.innerHTML="At least 6 characters";
     }
     for(var i=1;i<dir.value.length-1;i++){
         if(dir.value[i]==" "){
-            adressTxt=true;
+            adresTxt= true;
         }
     }
-    //if(!adressTxt){
-    //    errNom.innerHTML="Something went wrong";
+    //if(!adresTxt){
+       //errNom.innerHTML="Something went wrong";
     //}
 }
 function resetAdress(){
@@ -226,7 +226,7 @@ function checkCity(){
         errCity.innerHTML="At least 3 characters";
     }
 }
-function resetAdress(){
+function resetCity(){
     errCity.innerHTML="";
 }
 
