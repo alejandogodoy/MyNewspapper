@@ -67,3 +67,30 @@ function checkEmail(){
 function resetEmail(){
     errMail.innerHTML="";
 }
+
+////// PASSWORD FORM //////
+
+var pass=document.getElementById("pass");
+var errPass=document.getElementById("error-pass");
+
+pass.addEventListener("focus",resetPwd);
+pass.addEventListener("blur",checkPw);
+
+function checkPw(){
+    if(pass.value.length<8){
+        errPass.innerHTML="At least 8 characters long";
+    }
+    else{
+        patron = /[A-Za-z0-9]/;
+        for (var i=0; i<pass.value.length;i++){
+            if(!patron.test(pass.value[i])){
+                errPass.innerHTML="The password must have letters and numbers";
+                break;
+            }
+        }
+
+    }
+}
+function resetPwd(){
+    errPass.innerHTML="";
+}
