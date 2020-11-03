@@ -229,3 +229,20 @@ function checkCity(){
 function resetAdress(){
     errCity.innerHTML="";
 }
+
+////// Zip Code form //////
+
+var code=document.getElementById("zipCode");
+var errCod=document.getElementById("error-zipCode");
+
+code.addEventListener("focus",resetZC);
+code.addEventListener("blur",checkZC);
+
+function checkZC(){
+    if(code.value.length<4){
+        errCod.innerHTML="at least 4 digits";
+    }
+}
+function resetZC(){
+    errCod.innerHTML="";
+}
