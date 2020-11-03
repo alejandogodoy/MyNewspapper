@@ -94,3 +94,21 @@ function checkPw(){
 function resetPwd(){
     errPass.innerHTML="";
 }
+
+////// REPEAT PASSWORD //////
+
+var repPass= document.getElementById("rep-passwd");
+var errRepPass=document.getElementById("error-rPass");
+
+repPass.addEventListener("focus",resetRP);
+repPass.addEventListener("blur",checkRP);
+
+function checkRP(){
+    if(pass.value!=repPass.value || repPass.value.length==0 ){
+        errRepPass.innerHTML="Passwords don't match";
+    }
+}
+
+function resetRP(){
+    errRepPass.innerHTML="";
+}
