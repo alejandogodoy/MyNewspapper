@@ -212,3 +212,20 @@ function CheckAdress(){
 function resetAdress(){
     errDir.innerHTML="";
 }
+
+////// City Form ///////
+
+var city=document.getElementById("city");
+var errCity=document.getElementById("error-city");
+
+city.addEventListener("focus",resetCity);
+city.addEventListener("blur",checkCity);
+
+function checkCity(){
+    if(city.value.length<3){
+        errCity.innerHTML="At least 3 characters";
+    }
+}
+function resetAdress(){
+    errCity.innerHTML="";
+}
