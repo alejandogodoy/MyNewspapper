@@ -155,3 +155,34 @@ function CheckAge(){
 function resetAge(){
     errAge.innerHTML="";
 }
+
+/////// Phone number Form //////
+
+var tel=document.getElementById("phone");
+var errorPh=document.getElementById("error-phone");
+
+tel.addEventListener("focus",resetPh);
+tel.addEventListener("blur",checkPh);
+
+function checkPh(){
+    var phoneTxt = false;
+    if(tel.value.length<7){
+        errorPh.innerHTML="at least 7 digits";
+    }else{
+        for(var i=0;i<tel.value.length;i++){
+            if(tel.value[i]=="-" || tel.value[i]==" "|| tel.value[i]== "_" ||tel.value[i]=="(" ||tel.value[i]==")"){
+                phoneTxt=true;
+                break;}
+            else if(!correctNum(tel.value[i])){
+                    phoneTxt=true;
+                    break;
+                }
+        }
+        if (phoneTxt){
+            errorPh.innerHTML="Only numbers";
+        }
+    }
+}
+function resetPh(){
+    errorPh.innerHTML="";
+}
