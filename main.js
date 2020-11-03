@@ -186,3 +186,29 @@ function checkPh(){
 function resetPh(){
     errorPh.innerHTML="";
 }
+
+////// Adress form //////
+
+var dir=document.getElementById("adress");
+var errDir=document.getElementById("error-adress");
+
+dir.addEventListener("focus",resetAdress);
+dir.addEventListener("blur",CheckAdress);
+
+function CheckAdress(){
+    var adressTxt=false;
+    if(dir.value.length<5){
+        errDir.innerHTML="At least 6 characters";
+    }
+    for(var i=1;i<dir.value.length-1;i++){
+        if(dir.value[i]==" "){
+            adressTxt=true;
+        }
+    }
+    //if(!adressTxt){
+    //    errNom.innerHTML="Something went wrong";
+    //}
+}
+function resetAdress(){
+    errDir.innerHTML="";
+}
